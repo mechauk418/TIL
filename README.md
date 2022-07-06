@@ -12,9 +12,9 @@
 
 
 
-[markdown](Markdown\) (0705)
+[markdown](./Markdown) (0705)
 
-[Git](Git\) (0705 ~ 0706)
+[Git](./Git) (0705 ~ 0706)
 
 
 
