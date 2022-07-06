@@ -2,7 +2,7 @@
 
 
 
-![git](./git.png)
+![git](img/git.png)
 
 
 
@@ -30,7 +30,7 @@
   - modified:  수정한 파일을 아직 커밋하지 않은 상태 (Working Direcory 내에서 수정한 파일)
   - staged: 수정한 파일을 곧 커밋할 것이라고 표시한 상태 (add를 통해 Staging Area에 있는 상태)
   
-  ![areas](./areas.png)
+  ![areas](img/areas.png)
 
 
 
@@ -38,7 +38,7 @@
 
   
 
-  ![life](./life.png)
+  ![life](img/life.png)
 
   
 
