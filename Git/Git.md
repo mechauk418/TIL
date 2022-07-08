@@ -78,6 +78,8 @@
 
 ##  4. 원격 저장소 사용하기
 
+
+
 1. Github에서 원격저장소를 만든다.
 
 2. Github에서 다음과 같은 원격 저장소 정보를 준다.
@@ -130,10 +132,69 @@
   $ git pull <원격저장소 이름> <브랜치이름>
   ```
 
+
+
+
+## 6. Git Flow
+
+
+
+- Git를 활용하여 협업하는 흐름으로 branch를 활용하는 전략을 의미한다.
+
+- 가장 대표적으로 활용되는 전략은 아래와 같다.
+
   
+
+  ![git-flow_overall_graph](img/git-flow_overall_graph.png)
+
+  
+
+
+
+## 7. Branch 관련 명령어
+
+
+
+`git branch` : 브랜치 조회
+
+`git branch example`: example 라는 브랜치 생성
+
+`git checkout example`: example 라는 브랜치로 이동
+
+`git checkout -b example` : example 라는 브랜치를 생성하면서 이동
+
+`git merge example`: example 라는 브랜치를 현재 브랜치에 병합
+
+
+
+## 8. merge 
+
+
+
+
+
+
+
+## 9. Fork & Pull request
+
+
+
+포크(fork)는 개발자들이 소프트웨어 소스코드를 복사하여 새로운 소프트웨어를 개발하는 것을 말한다. 
+
+
+
+pull requests -> new pull request
+
+
+
+
+
+
 
 ## 참고 자료
 
 
 
 [git-scm.com](https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EA%B8%B0%EC%B4%88) (Git 공식 홈페이지)
+
+[https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/) (Git flow)
