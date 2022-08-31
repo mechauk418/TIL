@@ -1,0 +1,44 @@
+/* 아래에 CSS를 작성해주세요. */
+
+.box1 {
+  display: flex;
+  width: 300px;
+  margin-right: 20px;
+  flex-wrap:wrap;
+
+}
+.img1 {
+  width: 100%;
+  border-radius: 0.3rem;
+}
+.line1 {
+
+  font-size : 12px;
+  color : grey
+
+}
+.line3 {
+  margin-top:0px;
+  margin-bottom:0px;
+  font-size : 15px;
+  letter-spacing : -1px;
+}
+
+.price {
+  font-size : 20px;
+  color : skyblue;
+  justify-content:flex-start;
+
+}
+.price2 {
+  font-size: 20px;
+  width:250px;
+}
+.score {
+  font-size : 15px;
+  justify-content:flex-start;
+}
+.review {
+  font-size : 15px;
+  color: grey;
+}
