@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="05.css">
+
+</head>
+<body>
+  <!-- nav -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <img src = "./images/logo.png" style="width: 100px;">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-4">
+          <li class="nav-item">
+            <a class="nav-link active text-white fs-6" aria-current="page" href="./02_home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50 fs-6" href="./03_community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50 fs-6" href="#exampleModal" data-bs-toggle="modal">Login</a>
+          </li>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">이메일</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+              <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text"> 다른 사람에게 이메일을 공유하지 마세요.
+                </span></div>
+          
+          </div>
+      
+      
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">비밀번호</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+          </div>
+      
+      
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Check me out.
+              </label>
+            </div>
+          </div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main -->
+
+  <div class="container my-5">
+    <div class="row gx-5">
+      <div class="col-3">
+        <img class= "img-fluid rounded-2" src="./images/movie1.jpg">
+
+      </div>
+      <div class="col-6">
+        <h1> 쇼생크탈출</h1>
+        <p> The Shawshank Redemption, 1994</p>
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col" class="fw-normal text-black-50">개봉</th>
+              <th scope="col" class="fw-normal">1995.02.04</th>
+              <th scope="col" class="fw-normal text-black-50">평점</th>
+              <th scope="col" class="fw-normal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>9.6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">재개봉</th>
+              <td>2016.02.24</td>
+              <td class="fw-normal text-black-50">누적관객</td>
+              <td>11,413명
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">장르</th>
+              <td colspan="4">드라마</td>
+
+            </tr>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">국가</th>
+              <td>미국</td>
+              <td class="fw-normal text-black-50">영화정보</td>
+            </tr>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">등급</th>
+              <td colspan="4">15세 이상 관람가</td>
+            </tr>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">러닝타임</th>
+              <td colspan="4">133분 , 142분(재개봉)
+              </td>
+            </tr>
+
+
+
+
+
+
+          </tbody>
+        </table>
+
+
+
+
+
+      </div>
+
+      <div class="col-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+          <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+        </svg>
+      </div>
+
+
+
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        
+        
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active text-black fs-5" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">주요 정보</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-black fs-5" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">출연/제작</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-black fs-5" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">영상/포토</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-black fs-5" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">평점</button>
+          </li>
+        </ul> 
+        <!-- 주요 정보-->
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <div class="my-5 px-3">
+              <p>
+                <b>두려움은 너를 죄수로 가두고 </b>
+              </p>
+              <p class="mb-5">
+                <b>희망은 너를 자유롭게 하리라</b>
+              </p>
+
+              <div>
+                <p>
+                  촉망 받던 은행 부지점장 ‘앤디(팀 로빈슨 分)’는 아내와 그 애인을 살해한 혐의로 종신형을 받고 쇼생크 교도소에 수감된다..
+                  <div>
+                    <input id="check-btn" type="checkbox" />
+                    <label for="check-btn" class="more">더보기</label>
+                    <div class="sub-text">
+                      <p style="margin: 0;">
+                        강력범들이 수감된 이곳에서 재소자들은 짐승 취급 당하고, 혹여 간수 눈에 잘못 보였다가는 개죽음 당하기 십상이다. 처음엔 적응 못하던 ‘앤디’는 교도소 내 모든 물건을 구해주는 ‘레드(모건 프리먼 分)’와 친해지며 교도소 생활에 적응하려 하지만, 악질 재소자에게 걸려 강간까지 당한다.
+                        그러던 어느 날, 간수장의 세금 면제를 도와주며 간수들의 비공식 회계사로 일하게 되고, 마침내는 소장의 검은 돈까지 관리해주게 된다. 덕분에 교도소 내 도서관을 열 수 있게 되었을 무렵, 신참내기 ‘토미(길 벨로우스 分)’로부터 ‘앤디’의 무죄를 입증할 기회를 얻지만, 노튼 소장은 ‘앤디’를 독방에 가두고 ‘토미’를 무참히 죽여버리는데...                      
+                      </p>
+                      <div class="my-5">
+                        <hr>
+                      </div>
+                      <p>
+                        제작된 지 16년이 지난 지금에도 꾸준히 사랑 받고 있는 영화. 촉망받던 은행 부지점장 앤디는 아내와 애인을 살해한 혐의로 종신형을 받고 쇼생크 교도소에 수감된다. 강력범이 수감된 이곳에서 재소자들은 짐승 취급을 당하거나, 간수 눈에 잘못 보이면 죽음을 당할 수도 있다. 적응하지 못하던 앤디는 간수장의 세금 면제를 도와주며 비공식 회계사로 일을 하게 되고, 조금씩 희망을 찾으려 하지만 이내 좌절당하는 일이 반복된다. 앤디는 감옥 생활에 길들여져 가면서도 끝까지 희망을 놓지 않는다. 절망적인 상황 속에서 인간의 나약함과 희망에 대해 이야기하는 영화 <쇼생크 탈출>은 미국 영화 정보 사이트 IMDB에서 <대부>를 제치고 네티즌 평점 1위를 받았다.<br>(2016년 제4회 무주산골영화제)
+                      </p>
+                    </div>
+                  </div>
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="col-12 d-flex flex-wrap ">
+              <h3> 출연진 </h3>
+              <div class="ms-auto">
+                <button type="button" class="btn btn-outline-dark">더보기 <b>></b></button>
+
+
+              </div>
+              <hr>
+            </div>
+            <div class="container">
+              <div class="row row-cols-7 gx-5 my-4">
+                <div class="col">
+                  <img class="img-fluid rounded-2" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F15404110ADFC72D333">
+                  <p class="my-1"> 프랭크 다라본트</p>
+                  <p class="text-black-50"> 감독 </p>
+                </div>
+                <div class="col">
+                  <img class="img-fluid rounded-2" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F140D7C10ADF8435D0C">
+                  <p class="my-1"> 팀 로빈스</p>
+                  <p class="text-black-50"> 주연 </p>
+                </div>
+                <div class="col">
+                  <img class="img-fluid rounded-2" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312">
+                  <p class="my-1"> 모건 프리먼 </p>
+                  <p class="text-black-50"> 주연 </p>
+                </div>
+                <div class="col">
+                  <img class="img-fluid rounded-2" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F156B8D10B16CC9264C">
+                  <p class="my-1"> 밥 건튼</p>
+                  <p class="text-black-50"> 출연 </p>
+                </div>
+                <div class="col">
+                  <img class="img-fluid rounded-2" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fdong-test%2F8e7d65915ad1bfdd12d68c975a7a14ab7cb6b45c">
+                  <p class="my-1"> 윌리엄 새들러</p>
+                  <p class="text-black-50"> 출연 </p>
+                </div>
+                <div class="col">
+                  <img class="img-fluid rounded-2" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F2217504452CE159F28">
+                  <p class="my-1"> 클랜시 브라운</p>
+                  <p class="text-black-50"> 출연 </p>
+                </div>
+                <div class="col">
+                  <img class="img-fluid rounded-2" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F126F1B10AE07401E31">
+                  <p class="my-1"> 길 벨로우스</p>
+                  <p class="text-black-50"> 출연 </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 d-flex flex-wrap ">
+              <h3> 영상 / 포토 </h3>
+              <div class="ms-auto">
+                <button type="button" class="btn btn-outline-dark">더보기 <b>></b></button>
+
+              </div>
+              <hr>
+            </div>
+            
+
+            <div class="container">
+              <div class="row row-cols-2">
+                <div class="col">
+                  <div class="ratio ratio-16x9 my-3">
+                    <iframe class="rounded-2" src="https://www.youtube.com/embed/PFEFFq05HRM" title="YouTube video" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="ratio ratio-16x9 my-3">
+                    <iframe class="rounded-2" src="https://www.youtube.com/embed/PFEFFq05HRM" title="YouTube video" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-cols-4">
+                <div class="col">
+                  <img class="rounded-2 img-fluid" src="http://t1.daumcdn.net/movie/46ddad76632b50b03fcab83936d2144b62eb53ca">
+
+                </div>
+                <div class="col">
+                  <img class="rounded-2 img-fluid" src="http://t1.daumcdn.net/movie/46ddad76632b50b03fcab83936d2144b62eb53ca">
+
+                </div>
+
+                <div class="col">
+                  <img class="rounded-2 img-fluid" src="http://t1.daumcdn.net/movie/46ddad76632b50b03fcab83936d2144b62eb53ca">
+
+                </div>
+
+                <div class="col">
+                  <img class="rounded-2 img-fluid" src="http://t1.daumcdn.net/movie/46ddad76632b50b03fcab83936d2144b62eb53ca">
+
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+          </div>
+
+          <!-- 출연/제작-->
+          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <div class="container-fluid">
+              <div class="row mt-5">
+                <div class="col-12">
+                  <h2> 감독 </h2>
+                  <hr>
+                </div>
+              </div>
+              <div class="row" gx-5>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F15404110ADFC72D333">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">프랭크 다라본트</a>
+                    <p>Frank Darabont</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row mt-5">
+                <div class="col-12">
+                  <h2> 주연 </h2>
+                  <hr>
+                </div>
+              </div>
+              <div class="row" gx-5>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F140D7C10ADF8435D0C">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">팀 로빈스</a>
+                    <p class="my-0">Tim Robbins</p>
+                    <p class="text-black-50">앤디 듀프레인 역</p>
+                  </div>
+                </div>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">모건 프리먼</a>
+                    <p class="my-0">Morgan Freeman
+                    </p>
+                    <p class="text-black-50">레드 (엘리스 보이드 레딩) 역</p>
+
+                  </div>
+                </div>
+
+              </div>
+              
+
+              <div class="row mt-5">
+                <div class="col-12">
+                  <h2> 출연 </h2>
+                  <hr>
+                </div>
+              </div>
+              <div class="row" gx-5>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F140D7C10ADF8435D0C">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">팀 로빈스</a>
+                    <p class="my-0">Tim Robbins</p>
+                    <p class="text-black-50">앤디 듀프레인 역</p>
+                  </div>
+                </div>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">모건 프리먼</a>
+                    <p class="my-0">Morgan Freeman
+                    </p>
+                    <p class="text-black-50">레드 (엘리스 보이드 레딩) 역</p>
+
+                  </div>
+                </div>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">모건 프리먼</a>
+                    <p class="my-0">Morgan Freeman
+                    </p>
+                    <p class="text-black-50">레드 (엘리스 보이드 레딩) 역</p>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+
+
+          <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+            <div class="container my-5">
+              <!-- 영상 -->
+              <div>
+                <!-- 메인 영상 -->
+                <div>
+                  <h3>영상</h3>
+                  <div class="ratio ratio-16x9 my-3">
+                    <iframe src="https://www.youtube.com/embed/PFEFFq05HRM" title="YouTube video" allowfullscreen></iframe>
+                  </div>
+                  <h6>가수 김완선 추천 영상</h6>
+                  <p class="text-secondary">2016.03.03 재생 1,018</p>
+                </div>
+                <!-- 서브 영상들 -->
+                <div>
+                  <div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- 포토 -->
+              <div>
+                <!-- 메인 포토 -->
+                <div>
+                  <h3>포토</h3>
+                  <div class="row">
+                    <!-- 첫 번째 줄 -->
+                    <div class="col-3">
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/660" alt="Title">
+                      </div>
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/960" alt="Title">
+                      </div>
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/760" alt="Title">
+                      </div>
+                    </div>
+                    <!-- 두 번째 줄 -->
+                    <div class="col-3">
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/890" alt="Title">
+                      </div>
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/600" alt="Title">
+                      </div>
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/950" alt="Title">
+                      </div>
+                    </div>
+                    <!-- 세 번째 줄 -->
+                    <div class="col-3">
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/700" alt="Title">
+                      </div>
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/900" alt="Title">
+                      </div>
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/800" alt="Title">
+                      </div>
+                    </div>
+                    <!-- 네 번째 줄 -->
+                    <div class="col-3">
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/850" alt="Title">
+                      </div>
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/680" alt="Title">
+                      </div>
+                      <div class="card my-3">
+                        <img class="card-img-top" src="https://picsum.photos/1000/820" alt="Title">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div>
+              <input id="check-btn" type="checkbox" />
+              <label for="check-btn" class="more">더보기</label>
+              <div class="sub-text">
+                <p style="margin: 0;">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos similique quia perspiciatis, voluptas rem provident sapiente consequuntur quos est quaerat ratione fugit unde dicta. Esse dolore ipsum dicta asperiores rerum.
+                </p>
+              </div>
+            </div> -->
+          </div>
+          <!-- 평점 -->
+          <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+            <div class="row mt-5">
+              <div class="col-12 d-flex flex-wrap">
+                <h2> 네티즌 평점&nbsp;</h2> <h2 class="text-danger"> 9.6점&nbsp;&nbsp; </h2> 
+                <h2 class="text-black-50"> (1603명) </h2>
+                <hr>
+              </div>
+              <div class="card justfiy-content-start mx-3 mt-3 p-3" style="width: 80%;">
+
+
+                <div class="star-rating space-x-4">
+                  <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+                  <label for="5-stars" class="star pr-4">★</label>
+                  <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+                  <label for="4-stars" class="star">★</label>
+                  <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+                  <label for="3-stars" class="star">★</label>
+                  <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+                  <label for="2-stars" class="star">★</label>
+                  <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+                  <label for="1-star" class="star">★</label>
+                </div>
+                <hr>
+                <p class="text-black-50"> 로그인 해주세요.</p>
+
+
+              </div>
+            </div>
+
+            <div class="row" style="width: 80%;">
+              <div class="mt-3">
+                <p> 추천댓글 찬반순 최신순 과거순</p>
+                <hr>
+              </div>
+
+            </div>
+
+            <div class="row" style="width: 80%;">
+              <div class="mt-3">
+                <div class="card border-light">
+                  <p> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    10
+                  </p>
+
+
+                  <p>
+                    새장안에 가둬두면 죽는 새들이 있다.<br>
+                    바로 나같은 사람....<br><br>
+
+                    험난하고도 무료한 삶을 살면서 1년에 한번꼴로 <br>
+                    찾아낼수 있는 소장용 명작.<br>
+                    삶에 위안을 주는......<br><br>
+
+                    흠이 있다면 번역자가 멍청하게도<br>
+                    제목에 영화의 반전을 미리 알려줘버렸다.<br>
+                    덕분에 한국관객들은 반전을 알고 영화를본셈....<br><br>
+
+                    원래제목은 쇼생크 레뎀션이다.<br>
+                    사소한 번역실수 하나가 영화를 망치기도한다.<br>
+                    사실 내 생각에 실수라기보단 계획된 짓 같지만....<br>
+                  </p>
+                  <div class="d-flex flex-wrap justfiy-content-start align-items-center">
+                    <span> 작성자 : </span>
+                    <span class="mx-3 text-primary"> terdafd </span> 
+                    <span class = "mx-3"> 2022. 09. 14 21:43 </span>
+                    <span>
+                      <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
+
+                          <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                        </svg>32432</button>
+                      <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
+                          <path d="M8.864 15.674c-.956.24-1.843-.484-1.908-1.42-.072-1.05-.23-2.015-.428-2.59-.125-.36-.479-1.012-1.04-1.638-.557-.624-1.282-1.179-2.131-1.41C2.685 8.432 2 7.85 2 7V3c0-.845.682-1.464 1.448-1.546 1.07-.113 1.564-.415 2.068-.723l.048-.029c.272-.166.578-.349.97-.484C6.931.08 7.395 0 8 0h3.5c.937 0 1.599.478 1.934 1.064.164.287.254.607.254.913 0 .152-.023.312-.077.464.201.262.38.577.488.9.11.33.172.762.004 1.15.069.13.12.268.159.403.077.27.113.567.113.856 0 .289-.036.586-.113.856-.035.12-.08.244-.138.363.394.571.418 1.2.234 1.733-.206.592-.682 1.1-1.2 1.272-.847.283-1.803.276-2.516.211a9.877 9.877 0 0 1-.443-.05 9.364 9.364 0 0 1-.062 4.51c-.138.508-.55.848-1.012.964l-.261.065zM11.5 1H8c-.51 0-.863.068-1.14.163-.281.097-.506.229-.776.393l-.04.025c-.555.338-1.198.73-2.49.868-.333.035-.554.29-.554.55V7c0 .255.226.543.62.65 1.095.3 1.977.997 2.614 1.709.635.71 1.064 1.475 1.238 1.977.243.7.407 1.768.482 2.85.025.362.36.595.667.518l.262-.065c.16-.04.258-.144.288-.255a8.34 8.34 0 0 0-.145-4.726.5.5 0 0 1 .595-.643h.003l.014.004.058.013a8.912 8.912 0 0 0 1.036.157c.663.06 1.457.054 2.11-.163.175-.059.45-.301.57-.651.107-.308.087-.67-.266-1.021L12.793 7l.353-.354c.043-.042.105-.14.154-.315.048-.167.075-.37.075-.581 0-.211-.027-.414-.075-.581-.05-.174-.111-.273-.154-.315l-.353-.354.353-.354c.047-.047.109-.176.005-.488a2.224 2.224 0 0 0-.505-.804l-.353-.354.353-.354c.006-.005.041-.05.041-.17a.866.866 0 0 0-.121-.415C12.4 1.272 12.063 1 11.5 1z"/>
+                        </svg> 343</button>
+
+                    </span>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+
+              <div class="row" style="width: 80%;">
+              <div class="mt-3">
+                <div class="card border-light">
+                  <p> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    10
+                  </p>
+
+
+                  <p>
+                    살면서 총 16번은 봤다. 개인적으로 보고 싶어서 8번, 아는 지인들 추천하려고 같이 보면서 8번. 말이 필요 없다. 살면서 꼭 봐야할 영화.
+                  </p>
+                  <div class="d-flex flex-wrap justfiy-content-start align-items-center">
+                    <span> 작성자 : </span>
+                    <span class="mx-3 text-primary"> terdafd </span> 
+                    <span class = "mx-3"> 2022. 09. 14 21:43 </span>
+                    <span>
+                      <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
+
+                          <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                        </svg>25221</button>
+                      <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
+                          <path d="M8.864 15.674c-.956.24-1.843-.484-1.908-1.42-.072-1.05-.23-2.015-.428-2.59-.125-.36-.479-1.012-1.04-1.638-.557-.624-1.282-1.179-2.131-1.41C2.685 8.432 2 7.85 2 7V3c0-.845.682-1.464 1.448-1.546 1.07-.113 1.564-.415 2.068-.723l.048-.029c.272-.166.578-.349.97-.484C6.931.08 7.395 0 8 0h3.5c.937 0 1.599.478 1.934 1.064.164.287.254.607.254.913 0 .152-.023.312-.077.464.201.262.38.577.488.9.11.33.172.762.004 1.15.069.13.12.268.159.403.077.27.113.567.113.856 0 .289-.036.586-.113.856-.035.12-.08.244-.138.363.394.571.418 1.2.234 1.733-.206.592-.682 1.1-1.2 1.272-.847.283-1.803.276-2.516.211a9.877 9.877 0 0 1-.443-.05 9.364 9.364 0 0 1-.062 4.51c-.138.508-.55.848-1.012.964l-.261.065zM11.5 1H8c-.51 0-.863.068-1.14.163-.281.097-.506.229-.776.393l-.04.025c-.555.338-1.198.73-2.49.868-.333.035-.554.29-.554.55V7c0 .255.226.543.62.65 1.095.3 1.977.997 2.614 1.709.635.71 1.064 1.475 1.238 1.977.243.7.407 1.768.482 2.85.025.362.36.595.667.518l.262-.065c.16-.04.258-.144.288-.255a8.34 8.34 0 0 0-.145-4.726.5.5 0 0 1 .595-.643h.003l.014.004.058.013a8.912 8.912 0 0 0 1.036.157c.663.06 1.457.054 2.11-.163.175-.059.45-.301.57-.651.107-.308.087-.67-.266-1.021L12.793 7l.353-.354c.043-.042.105-.14.154-.315.048-.167.075-.37.075-.581 0-.211-.027-.414-.075-.581-.05-.174-.111-.273-.154-.315l-.353-.354.353-.354c.047-.047.109-.176.005-.488a2.224 2.224 0 0 0-.505-.804l-.353-.354.353-.354c.006-.005.041-.05.041-.17a.866.866 0 0 0-.121-.415C12.4 1.272 12.063 1 11.5 1z"/>
+                        </svg> 343</button>
+
+                    </span>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="width: 80%;">
+              <div class="mt-3">
+                <div class="card border-light">
+                  <p> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    10
+                  </p>
+
+
+                  <p>
+                    자유에 대한 갈망이라던가 희망이라던가 다 마음에 들었는데 난 좀 다른 부분도 생각한게 결국엔 앤디가 자유를 갖기에 가장 준비된 사람이기에 가능했던 일이라 생각한다. 나도 그러기 위해 노력해야지!!
+                  </p>
+                  <div class="d-flex flex-wrap justfiy-content-start align-items-center">
+                    <span> 작성자 : </span>
+                    <span class="mx-3 text-primary"> terdafd </span> 
+                    <span class = "mx-3"> 2022. 09. 14 21:43 </span>
+                    <span>
+                      <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
+
+                          <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                        </svg>7843</button>
+                      <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
+                          <path d="M8.864 15.674c-.956.24-1.843-.484-1.908-1.42-.072-1.05-.23-2.015-.428-2.59-.125-.36-.479-1.012-1.04-1.638-.557-.624-1.282-1.179-2.131-1.41C2.685 8.432 2 7.85 2 7V3c0-.845.682-1.464 1.448-1.546 1.07-.113 1.564-.415 2.068-.723l.048-.029c.272-.166.578-.349.97-.484C6.931.08 7.395 0 8 0h3.5c.937 0 1.599.478 1.934 1.064.164.287.254.607.254.913 0 .152-.023.312-.077.464.201.262.38.577.488.9.11.33.172.762.004 1.15.069.13.12.268.159.403.077.27.113.567.113.856 0 .289-.036.586-.113.856-.035.12-.08.244-.138.363.394.571.418 1.2.234 1.733-.206.592-.682 1.1-1.2 1.272-.847.283-1.803.276-2.516.211a9.877 9.877 0 0 1-.443-.05 9.364 9.364 0 0 1-.062 4.51c-.138.508-.55.848-1.012.964l-.261.065zM11.5 1H8c-.51 0-.863.068-1.14.163-.281.097-.506.229-.776.393l-.04.025c-.555.338-1.198.73-2.49.868-.333.035-.554.29-.554.55V7c0 .255.226.543.62.65 1.095.3 1.977.997 2.614 1.709.635.71 1.064 1.475 1.238 1.977.243.7.407 1.768.482 2.85.025.362.36.595.667.518l.262-.065c.16-.04.258-.144.288-.255a8.34 8.34 0 0 0-.145-4.726.5.5 0 0 1 .595-.643h.003l.014.004.058.013a8.912 8.912 0 0 0 1.036.157c.663.06 1.457.054 2.11-.163.175-.059.45-.301.57-.651.107-.308.087-.67-.266-1.021L12.793 7l.353-.354c.043-.042.105-.14.154-.315.048-.167.075-.37.075-.581 0-.211-.027-.414-.075-.581-.05-.174-.111-.273-.154-.315l-.353-.354.353-.354c.047-.047.109-.176.005-.488a2.224 2.224 0 0 0-.505-.804l-.353-.354.353-.354c.006-.005.041-.05.041-.17a.866.866 0 0 0-.121-.415C12.4 1.272 12.063 1 11.5 1z"/>
+                        </svg> 474</button>
+
+                    </span>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <footer class="bg-dark py-5">
+    <p class="text-center text-white mb-0"> Copyright © Your Website 2022 </p>
+
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+
