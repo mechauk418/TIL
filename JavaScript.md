@@ -352,6 +352,12 @@ x = 'The answer is ' + 31 // "The answer is 31"
 
 ```javascript
 guessSubmit.addEventListener('click', checkGuess);
+// checkGuess 는 함수
+
+guessSubmit.addEventListener('click', function(){
+    console.log(a)
+})
+// 이런 식으로 함수를 바로 작성하는 것도 가능하다.
 ```
 
 
@@ -359,6 +365,12 @@ guessSubmit.addEventListener('click', checkGuess);
 위의 코드에서 `addEventListener(이벤트 유형, 함수)` 가 이벤트 수신기 메서드이다.
 
 (함수에는 () 를 붙이지 않는다. )
+
+
+
+이벤트 유형 참고 -> https://developer.mozilla.org/en-US/docs/Web/Events
+
+
 
 
 
