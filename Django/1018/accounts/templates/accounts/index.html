@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<div class="container d-flex flex-column align-items-center my-5">
+  <h1 class="text-center my-5"> 회원 목록 </h1>
+  <div class="col-10">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">pk</th>
+          <th scope="col">Username</th>
+          <th scope="col">email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for account in accounts %}
+        <tr>
+          <th scope="row">{{account.pk}}</th>
+          <td><a href="{% url 'accounts:detail' account.pk %}"> {{account.username}}</a> </td>
+          <td>{{account.email}} </td>
+
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="col-8 my-5">
+    <div class="bg-warning py-2 px-4 my-3 rounded"> <span class="align-middle fs-2"> 자유게시판 </span></div>
+    <div class="d-flex border p-3">
+      <div class="col-6"> 
+        <p>댓글이 가장 많은 게시글</p>
+        {% for article in articles %}
+
+        <p class="my-0"> {{article.title}} <span style="color:red;">[{{ article.comment_set.count }}]</span> </p>
+
+        {% endfor %}
+      </div>
+
+      <div class="col-6">
+        <p>추천수가 가장 많은 게시글</p>
+      </div>
+    </div>
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">글 번호</th>
+          <th scope="col" colspan="4" class="text-center">제목</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th scope="col" class="text-center">작성자</th>
+          <th scope="col" class="text-center">작성시간</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for article in articles %}
+        <tr>
+          <td class="text-center">{{article.pk}}  </td>
+          <td colspan="4"><a href="{% url 'articles:detail' article.pk %}">   {{article.title}}    </a> <span style="color:red;">&nbsp;  [{{ article.comment_set.count }}]</span></td>
+          <td></td>
+          <td></td>
+
+          <td></td>
+
+          <td>{{article.writer}}</td>
+          <td class="text-center">{{article.created_at|date:'f'}}</td>
+
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="text-end"><a href="{% url 'articles:create' %}" class="btn btn-primary ">글 작성</a>
+    </div>
+    <div class="d-flex justify-content-center"> 
+      <form class="d-flex" role="search" action="" method="POST">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock content %}
