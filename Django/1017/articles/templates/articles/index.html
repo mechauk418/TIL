@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+{% load django_bootstrap5 %}
+
+<body>
+
+  <div class="container d-flex align-items-center flex-column my-5">
+    <div class="col-9 align-items-center p-4 border border-5 rounded-5" style="background-color: #EFE7DB;">
+      <h1 class="text-center my-5"> 게시판 </h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">pk</th>
+            <th scope="col">제목</th>
+            <th scope="col">작성자</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for article in articles %}
+          <tr>
+            <td>{{article.pk}}  </td>
+            {% if article.thumbnail %}
+
+            <td><img src="{{ article.thumbnail.url }}" class="" alt="..."></td>
+            {% endif %}
+
+            <td><a href="{% url 'articles:detail' article.pk %}">   {{article.title}}  </a></td>
+            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-end"><a href="{% url 'articles:create' %}" class="btn btn-primary ">글 작성</a>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

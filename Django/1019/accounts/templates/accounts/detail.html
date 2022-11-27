@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+<div class="col-10">
+  <table class="table my-5">
+    <thead>
+      <tr>
+        <th scope="col">PK</th>
+        <th scope="col">유저 아이디</th>
+        <th scope="col">이메일</th>
+        <th scope="col">마지막 로그인</th>
+        <th scope="col">권한</th>
+        <th scope="col">이름</th>
+        <th scope="col">성</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <th scope="row" class="align-middle">  {{account.pk}} </td>
+          <td class="align-middle">{{account.username}}</td>
+          <td class="align-middle">{{account.email}}</td>
+          <td class="align-middle">{{account.last_login}}</td>
+          <td class="align-middle">{{account.is_superuser}}</td>
+          <td class="align-middle">{{account.last_name}}</td>
+          <td class="align-middle">{{account.first_name}}</td>
+
+        </tr>
+    </tbody>
+  </table>
+
+  <h1 class="text-center my-5"> 작성 글 확인</h1>
+
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">글 번호</th>
+        <th scope="col" colspan="4" class="text-center">제목</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th scope="col" class="text-center">작성자</th>
+        <th scope="col" class="text-center">작성시간</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in article_list %}
+      <tr>
+        <td class="text-center">{{article.pk}}  </td>
+        <td colspan="4"><a href="{% url 'articles:detail' article.pk %}">   {{article.title}}  </a></td>
+        <td></td>
+        <td></td>
+
+        <td></td>
+
+        <td>{{article.writer}}</td>
+        <td class="text-center">{{article.created_at|date:'f'}}</td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h1 class="text-center my-5"> 댓글 확인</h1>
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">글 번호</th>
+        <th scope="col" colspan="4" class="text-center">제목</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th scope="col" class="text-center">작성자</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for comment in comment_list %}
+      <tr>
+        <td class="text-center">{{comment.pk}}  </td>
+        <td colspan="4"><a href="{% url 'articles:detail' comment.article.pk %}">   {{comment.content}}  </a></td>
+        <td></td>
+        <td></td>
+
+        <td></td>
+
+        <td>{{comment.comment_writer}}</td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock content %}

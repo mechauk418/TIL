@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+<form action="" method="POST" >
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <div class="text-center my-5">
+    <button class="btn btn-primary justify-content-center px-4 mx-3" type="sumbit">확인</button>
+  </div>
+</form>
+
+{% endblock content %}

@@ -1,5 +1,6 @@
 {% load django_bootstrap5 %}
 {% load static %}
+
 <!doctype html>
 <html lang="en">
 
@@ -8,14 +9,6 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="{%static 'css/css.css' %}">
-
-    {% bootstrap_css %}
-    {% block css %}{% endblock %} 
   <style>
     html, body {
       height: 100%;
@@ -29,10 +22,12 @@
 
     main {
       flex: 1;
-      background-size: cover;
     }
-
   </style>
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
 </head>
 
 <body>
@@ -40,7 +35,6 @@
     <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd; height: 4rem;">
       <div class="container-fluid px-5">
         <a href="{% url 'articles:index' %}" class="navbar-brand">
-          <img style="width: 4rem;" src="{% static 'images/logo.jpg' %}">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
@@ -62,7 +56,7 @@
                 <a class="nav-link" href="{% url 'accounts:detail' user.pk %}"> {{user}} 님 </a>
               </li>
               <li class=" nav-item">
-                <a class="nav-link" href="{% url 'accounts:update' %}"> 회원 정보 수정 </a>
+                <a class="nav-link" href="{% url 'accounts:index' %}"> 회원 정보 수정 </a>
               </li>        
             {% else %}
               <li class="nav-item">
@@ -78,15 +72,12 @@
         </div>
       </div>
     </nav>
-
-    
   </header>
   <main>
-    
     <div class="container d-flex flex-column align-items-center">
-    {% block content %}
-      
-    {% endblock content%}
+      {% block content %}
+        
+      {% endblock content%}
     </div>
 
   </main>
@@ -94,8 +85,6 @@
     <p class="text-center mb-0">Copyright © Your Website 2022</p>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
-  {% bootstrap_javascript %}
-
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>

@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block content %}
+
+  {% if messages %}
+  <div class="alert alert-primary" role="alert">
+
+    {% for message in messages %}
+      <h1>{{ message.message }}</h1>
+    {% endfor %}
+  </div>
+
+  {% endif %}
+<div class="col-8 my-5 p-3 rounded" style="background-color: whitesmoke;">
+  <div class="my-3 px-3 d-flex align-items-center" style="background-color: rgb(164, 162, 162); height: 4rem;"><h2>{{articles.title}}</h2></div>
+  <div class="d-flex justify-content-between px-3">
+    <a href="{% url 'accounts:detail' articles.user.pk %}"><span> {{articles.user}}</span></a> <span>댓글 {{comments_count}} </span></div>
+  <hr>
+  <div class="px-3 my-5">
+    {{articles.content|linebreaksbr}}
+  </div>
+  <div class="px-3 my-3">
+    
+    <form action="{% url 'articles:delete' articles.pk %}" method="POST" class="form mt-5 text-end">
+      {% csrf_token %}
+      {% if request.user == articles.user %}
+      <a href="{% url 'articles:update' articles.pk %}" class="btn btn-outline-secondary">수정</a>
+
+      <input class="btn btn-outline-danger" type="submit" value="삭제">
+      {% endif %}
+      <a href="{% url 'articles:index' %}" class="btn btn-outline-secondary">뒤로</a>
+    </form>
+  </div>
+  <div>
+    <!-- <img class="my-3" style="height: 10rem; width: 100%;" src="{% static 'images/banner.webp' %}"> -->
+  </div>
+  {% for comment in comments %}
+  <div class="d-flex px-3 border-top border-bottom" style="height: 5rem;">
+    <div class="col-2 align-self-center">{{comment.user}}</div>
+    <div class="col-8 align-self-center">{{comment.content}}</div>
+    {% if request.user == comment.user %}
+    <form action="    {% url 'articles:comment_delete' articles.pk comment.pk %}
+    " method="POST" class="align-self-center">
+      {% csrf_token %}
+      <input class="" type="submit" value="삭제"> 
+    </form>
+    {% endif %}
+    <hr class="my-3">
+  </div>
+  {% endfor %}
+  <div class="px-3 my-3">
+    <form action="{% url 'articles:create_comment' articles.pk %}" method="POST" class="border border-5 rounded p-3" style="background-color:whitesmoke;">
+      {% csrf_token %}
+      {% bootstrap_form comment_form %}
+      <div class="text-end"><input class="btn btn-primary" type="submit" value="댓글 작성"></a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}
