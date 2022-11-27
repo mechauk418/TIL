@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1> Post Create</h1>
+    <div>
+        <div>
+            <input type="text" name="" id="post_title">
+        </div>
+        <div>
+            <textarea name="" id="post_content" cols="30" rows="10"> </textarea>
+        </div>
+        <div>
+            <button type="button" onclick="createPost()"> 등록 </button>
+        </div>
+        
+    </div>
+    
+    <script>
+        async function createPost(){
+            const title = document.getElementsById("post_title").value
+            const content = document.getElementById("post_content").value
+            const formdata = new FormData();
+
+            formdata.append('title',title)
+            formdata.append('content',content)
+
+            const response = await fetch("http://127.0.0.1:8000/post/post/",{
+                method:'POST',
+                body:formdata
+            }
+            )
+
+            if (response.status==200){
+                alert("글작성 완료")
+                window.location.replace("file:///C:/Users/LeeJinUk/Desktop/TIL/DRF/1126/index.html");
+
+            }else{
+                alert(response.status)
+            }
+
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>
