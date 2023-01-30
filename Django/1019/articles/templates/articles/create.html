@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+<div class="col-8 my-5">
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <div class="text-end"><input class="btn btn-primary" type="submit" value="작성">
+    </div>  
+  </form>
+</div>
+{% endblock content %}

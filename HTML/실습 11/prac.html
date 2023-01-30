@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="05.css">
+
+</head>
+<body>
+  <!-- nav -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <img src = "./images/logo.png" style="width: 100px;">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-4">
+          <li class="nav-item">
+            <a class="nav-link active text-white fs-6" aria-current="page" href="./02_home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50 fs-6" href="./03_community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50 fs-6" href="#exampleModal" data-bs-toggle="modal">Login</a>
+          </li>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">이메일</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+              <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text"> 다른 사람에게 이메일을 공유하지 마세요.
+                </span></div>
+          
+          </div>
+      
+      
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">비밀번호</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+          </div>
+      
+      
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Check me out.
+              </label>
+            </div>
+          </div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main -->
+
+  <div class="container my-5">
+    <div class="row gx-5 d-flex flex-wrap">
+
+      <img class= "img-fluid rounded-2" style="width:25%;" src="./images/movie1.jpg">
+
+      <div style="width: 700px;">
+        <h1> 쇼생크탈출</h1>
+        <p> The Shawshank Redemption, 1994</p>
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col" class="fw-normal text-black-50">개봉</th>
+              <th scope="col" class="fw-normal">1995.02.04</th>
+              <th scope="col" class="fw-normal text-black-50">평점</th>
+              <th scope="col" class="fw-normal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>9.6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">재개봉</th>
+              <td>2016.02.24</td>
+              <td class="fw-normal text-black-50">누적관객</td>
+              <td>11,413명
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">장르</th>
+              <td colspan="4">드라마</td>
+
+            </tr>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">국가</th>
+              <td>미국</td>
+              <td class="fw-normal text-black-50">영화정보</td>
+            </tr>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">등급</th>
+              <td colspan="4">15세 이상 관람가</td>
+            </tr>
+            <tr>
+              <th scope="row" class="fw-normal text-black-50">러닝타임</th>
+              <td colspan="4">133분 , 142분(재개봉)
+              </td>
+            </tr>
+
+
+
+
+
+
+          </tbody>
+        </table>
+
+
+
+
+
+      </div>
+
+      <div class="col-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+          <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+        </svg>
+      </div>
+
+
+
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        
+        
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active text-black fs-5" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">주요 정보</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-black fs-5" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">출연/제작</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-black fs-5" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">영상/포토</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-black fs-5" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">평점</button>
+          </li>
+        </ul> 
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <div class="my-5 px-3">
+              <p>
+                <b>두려움은 너를 죄수로 가두고 </b>
+              </p>
+              <p class="mb-5">
+                <b>희망은 너를 자유롭게 하리라</b>
+              </p>
+
+              <div>
+                <p>
+                  촉망 받던 은행 부지점장 ‘앤디(팀 로빈슨 分)’는 아내와 그 애인을 살해한 혐의로 종신형을 받고 쇼생크 교도소에 수감된다..
+                  <div>
+                    <input id="check-btn" type="checkbox" />
+                    <label for="check-btn" class="more">더보기</label>
+                    <div class="sub-text">
+                      <p style="margin: 0;">
+                        강력범들이 수감된 이곳에서 재소자들은 짐승 취급 당하고, 혹여 간수 눈에 잘못 보였다가는 개죽음 당하기 십상이다. 처음엔 적응 못하던 ‘앤디’는 교도소 내 모든 물건을 구해주는 ‘레드(모건 프리먼 分)’와 친해지며 교도소 생활에 적응하려 하지만, 악질 재소자에게 걸려 강간까지 당한다.
+                        그러던 어느 날, 간수장의 세금 면제를 도와주며 간수들의 비공식 회계사로 일하게 되고, 마침내는 소장의 검은 돈까지 관리해주게 된다. 덕분에 교도소 내 도서관을 열 수 있게 되었을 무렵, 신참내기 ‘토미(길 벨로우스 分)’로부터 ‘앤디’의 무죄를 입증할 기회를 얻지만, 노튼 소장은 ‘앤디’를 독방에 가두고 ‘토미’를 무참히 죽여버리는데...                      
+                      </p>
+                      <div class="my-5">
+                        <hr>
+                      </div>
+                      <p>
+                        제작된 지 16년이 지난 지금에도 꾸준히 사랑 받고 있는 영화. 촉망받던 은행 부지점장 앤디는 아내와 애인을 살해한 혐의로 종신형을 받고 쇼생크 교도소에 수감된다. 강력범이 수감된 이곳에서 재소자들은 짐승 취급을 당하거나, 간수 눈에 잘못 보이면 죽음을 당할 수도 있다. 적응하지 못하던 앤디는 간수장의 세금 면제를 도와주며 비공식 회계사로 일을 하게 되고, 조금씩 희망을 찾으려 하지만 이내 좌절당하는 일이 반복된다. 앤디는 감옥 생활에 길들여져 가면서도 끝까지 희망을 놓지 않는다. 절망적인 상황 속에서 인간의 나약함과 희망에 대해 이야기하는 영화 <쇼생크 탈출>은 미국 영화 정보 사이트 IMDB에서 <대부>를 제치고 네티즌 평점 1위를 받았다.<br>(2016년 제4회 무주산골영화제)
+                      </p>
+                    </div>
+                  </div>
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <div class="container-fluid">
+              <div class="row mt-5">
+                <div class="col-12">
+                  <h2> 감독 </h2>
+                  <hr>
+                </div>
+              </div>
+              <div class="row" gx-5>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F15404110ADFC72D333">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">프랭크 다라본트</a>
+                    <p>Frank Darabont</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row mt-5">
+                <div class="col-12">
+                  <h2> 주연 </h2>
+                  <hr>
+                </div>
+              </div>
+              <div class="row" gx-5>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F140D7C10ADF8435D0C">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">팀 로빈스</a>
+                    <p class="my-0">Tim Robbins</p>
+                    <p class="text-black-50">앤디 듀프레인 역</p>
+                  </div>
+                </div>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">모건 프리먼</a>
+                    <p class="my-0">Morgan Freeman
+                    </p>
+                    <p class="text-black-50">레드 (엘리스 보이드 레딩) 역</p>
+
+                  </div>
+                </div>
+
+              </div>
+              
+
+              <div class="row mt-5">
+                <div class="col-12">
+                  <h2> 출연 </h2>
+                  <hr>
+                </div>
+              </div>
+              <div class="row" gx-5>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F140D7C10ADF8435D0C">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">팀 로빈스</a>
+                    <p class="my-0">Tim Robbins</p>
+                    <p class="text-black-50">앤디 듀프레인 역</p>
+                  </div>
+                </div>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">모건 프리먼</a>
+                    <p class="my-0">Morgan Freeman
+                    </p>
+                    <p class="text-black-50">레드 (엘리스 보이드 레딩) 역</p>
+
+                  </div>
+                </div>
+                <div class="col-4 d-flex flex-wrap">
+                  <img class="rounded-2" style = "width:100px;" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312">
+                  <div class="mx-3">
+                    <a class="fs-4" href="#" style="text-decoration:none">모건 프리먼</a>
+                    <p class="my-0">Morgan Freeman
+                    </p>
+                    <p class="text-black-50">레드 (엘리스 보이드 레딩) 역</p>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+            <div>
+              <input id="check-btn" type="checkbox" />
+              <label for="check-btn" class="more">더보기</label>
+              <div class="sub-text">
+                <p style="margin: 0;">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos similique quia perspiciatis, voluptas rem provident sapiente consequuntur quos est quaerat ratione fugit unde dicta. Esse dolore ipsum dicta asperiores rerum.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">4페이지</div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+      <div class="container my-5">
+        <!-- 영상 -->
+        <div>
+          <!-- 메인 영상 -->
+          <div>
+            <h3>영상</h3>
+            <div class="ratio ratio-16x9 my-3">
+              <iframe src="https://www.youtube.com/embed/PFEFFq05HRM" title="YouTube video" allowfullscreen></iframe>
+            </div>
+            <h6>가수 김완선 추천 영상</h6>
+            <p class="text-secondary">2016.03.03 재생 1,018</p>
+          </div>
+          <!-- 서브 영상들 -->
+          <div>
+            <div>
+
+            </div>
+          </div>
+        </div>
+        <!-- 포토 -->
+        <div>
+          <!-- 메인 포토 -->
+          <div>
+            <h3>포토</h3>
+            <div class="row">
+              <!-- 첫 번째 줄 -->
+              <div class="col-3">
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/660" alt="Title">
+                </div>
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/960" alt="Title">
+                </div>
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/760" alt="Title">
+                </div>
+              </div>
+              <!-- 두 번째 줄 -->
+              <div class="col-3">
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/890" alt="Title">
+                </div>
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/600" alt="Title">
+                </div>
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/950" alt="Title">
+                </div>
+              </div>
+              <!-- 세 번째 줄 -->
+              <div class="col-3">
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/700" alt="Title">
+                </div>
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/900" alt="Title">
+                </div>
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/800" alt="Title">
+                </div>
+              </div>
+              <!-- 네 번째 줄 -->
+              <div class="col-3">
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/850" alt="Title">
+                </div>
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/680" alt="Title">
+                </div>
+                <div class="card my-3">
+                  <img class="card-img-top" src="https://picsum.photos/1000/820" alt="Title">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div>
+        <input id="check-btn" type="checkbox" />
+        <label for="check-btn" class="more">더보기</label>
+        <div class="sub-text">
+          <p style="margin: 0;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos similique quia perspiciatis, voluptas rem provident sapiente consequuntur quos est quaerat ratione fugit unde dicta. Esse dolore ipsum dicta asperiores rerum.
+          </p>
+        </div>
+      </div> -->
+    </div>
+    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+      4페이지
+    </div>
+  </div>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+  <footer class="bg-dark py-5">
+    <p class="text-center text-white mb-0"> Copyright © Your Website 2022 </p>
+
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+

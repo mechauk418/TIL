@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .modal-black{
+      position: fixed;
+      top : 0;
+      left : 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+    }
+    
+    .active{
+      display: flex;
+
+    }
+
+  </style>
+</head>
+<body>
+  <button id="modalbtn"> 모달버튼 </button>
+  <div id="modalmain" class="modal-black"> 모달
+    <button id="modalcancel"> 취소버튼 </button> 
+  </div>
+
+
+
+
+  <script>
+    const modalclick = function(){
+      document.querySelector('#modalmain').classList.toggle('active')
+    }
+
+    const modalbtn = document.querySelector('#modalbtn')
+    modalbtn.addEventListener('click',modalclick)
+    
+    const modalcalcel = document.querySelector('#modalcancel')
+    modalcalcel.addEventListener('click',modalclick)
+
+    const modalmain = document.querySelector('#modalmain')
+    modalmain.addEventListener('click',modalclick)
+
+
+  </script>
+
+  
+</body>
+</html>
+

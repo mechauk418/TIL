@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.0-beta1 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <style>
+    td {
+      font-size: 20px;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <form action="{% url 'todo:result' %}">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">&ensp;&nbsp;할 일 &ensp;&nbsp;</span>
+        <input type="text" class="form-control" name="content" maxlength="80">
+
+      </div>
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">우선 순위</label>
+        <select class="form-select" id="inputGroupSelect01" name="priority">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <option value="3">5</option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">마감 기한</span>
+        <input type="date" class="form-control" name="deadline" id="currentDate">
+
+      </div>
+      <input class="btn btn-outline-primary" style="width:100%" type="submit" value="할 일 추가">
+
+    </form>
+
+    <!-- 표 시작 -->
+
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th scope="col">우선 순위</th>
+          <th scope="col">할 일 내용</th>
+          <th scope="col">생성 날짜</th>
+          <th scope="col">마감 기한</th>
+          <th scope="col">진행 상태</th>
+          <th scope="col">상태 변경</th>
+          <th scope="col">삭제</th>
+        </tr>
+      </thead>
+
+      <!-- 표 내용-->
+
+      <tbody>
+        {% for post in posts %}
+        <tr>
+          {% if post.completed == False %}
+          <td>
+            {{ post.priority }}
+          </td>
+          {% else %}
+          <td>
+            <del>{{ post.priority }}</del>
+          </td>
+          {% endif %}
+
+          {% if post.completed == False %}
+          <td>
+            {{ post.content }}
+          </td>
+          {% else %}
+          <td>
+            <del>{{ post.content }}</del>
+          </td>
+          {% endif %}
+
+
+          {% if post.completed == False %}
+          <td>
+            {{ post.created_at }}
+          </td>
+          {% else %}
+          <td>
+            <del>{{ post.created_at }}</del>
+          </td>
+          {% endif %}
+
+          {% if post.completed == False %}
+          <td>
+            {{ post.deadline }}
+          </td>
+          {% else %}
+          <td>
+            <del>{{ post.deadline }}</del>
+          </td>
+          {% endif %}
+
+          {% if post.completed == False %}
+          <td>
+            {{ post.completed }}
+          </td>
+          {% else %}
+          <td>
+            <del>{{ post.completed }}</del>
+          </td>
+          {% endif %}
+
+          <td>
+            <a class="btn btn-primary" href="{% url 'todo:update' post.pk %}"> 변경 </a>
+          </td>
+          <td>
+            <a class="btn btn-danger" href="{% url 'todo:delete' post.pk %}"> 삭제 </a>
+          </td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+
+  </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+    </script>
+
+  <script>
+    document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);;
+  </script>
+
+</body>
+
+</html>

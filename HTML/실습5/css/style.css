@@ -1,0 +1,126 @@
+.nav-main{
+  display: flex;
+  position: sticky;
+  margin:0px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding:40px;
+  top: 0px;
+
+}
+
+.nav-ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+
+.nav-li{
+  margin:15px;
+  align-items: center;
+  
+
+}
+
+.movie_image{
+  height: 60px;
+}
+
+.nav_text{
+  justify-content: end;
+  margin:auto;
+}
+
+.title_image{
+  display: flex;
+  background-image: url(../images/images/background.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  height:320px;
+  margin-top:5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.title_text{
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.genre_ul{
+  padding-left: 0px;
+
+}
+
+.aside-genre{
+  display: inline;
+  padding:1rem;
+  width:20%
+
+}
+
+.genre-h2{
+  font-size: 25px;
+
+}
+
+
+.movie_list{
+  width:80%;
+  padding: 24px;
+
+}
+
+.movie_rank{
+  display: flex;
+  background-color: whitesmoke;
+  background-size: contain; 
+  background-repeat: no-repeat;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+.main_div{
+  display: flex  ;
+}
+
+.rank_image{
+  width:300px;
+  border-radius: 1rem;
+
+}
+
+.live_rank{
+  margin : 30px;
+  font-size: 25px;
+  display: block;
+  text-align: center;
+
+}
+
+.div_image{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+}
+.footer{
+  width: 100%;
+  display: flex;
+  position: sticky;  
+  bottom: 0px;
+  height: 40px;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+
+
+}

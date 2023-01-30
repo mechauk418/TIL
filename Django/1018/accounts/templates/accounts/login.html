@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<div class="col-8 d-flex flex-column align-items-center my-5">
+  <h1 class="text-center mb-5">로그인</h1> 
+  <form class="col-4 align-items-center" action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <div class="text-center my-5">
+      <button class="btn btn-primary justify-content-center px-4 mx-3" type="sumbit">로그인</button>
+      <a href="{% url 'accounts:signup' %}" class="btn btn-primary mx-3"> 회원 가입 </a>
+    </div>
+  </form>
+
+
+</div>
+
+
+{% endblock content %}

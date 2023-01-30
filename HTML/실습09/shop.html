@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 네비바 -->
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start bootstrap</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Shop
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All Products</a></li>
+              <li><a class="dropdown-item" href="#">Popular item</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+            </ul>
+        </ul>
+        <form class="d-flex align-baseline" role="search">
+          <button class="btn btn-outline-success btn-outline-dark" type="submit">  
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="30" fill="currentColor" class="bi bi-cart-fill mx-2 text-dark " viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>Cart  <span class="badge text-bg-dark mx-1">0</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+  </nav>
+
+  <!--메인페이지 제목-->
+
+  <div class="d-flex flex-column bg-dark pt-5 pb-5 align-items-center justify-content-center" style="height: 300px; margin-bottom: 100px;">
+    <h1 class="text-white text-center " style="font-size: 55px;"> <b>Shop in style</b></h1>
+    <h5 class="text-secondary text-center"> <b>With this shop hompeage template</b></h5>
+      
+  </div>
+
+  <div class="container mb-5">
+    <div class="row gx-4 mb-5 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+      <div class="col">
+        <div class="card text-center mb-5" style="height: 400px">
+          <img src="https://dummyimage.com/450x300/b6c4cc/fff" class="card-img-top" alt="alter">
+          <div class="card-body d-flex justify-content-around">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-center"><b>Fancy Product</b> </h5>
+                <p class="card-text text-center">$40.00 - $80.00 </p>
+              </div>
+              <a href="#" class="btn btn-white btn-outline-dark justify-content-center">View option</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center mb-5" style="height: 400px">
+          <img src="https://dummyimage.com/450x300/b6c4cc/fff" class="card-img-top position-relative" alt="alter">
+          <div class="position-absolute bg-dark rounded text-white p-1 px-3" style="top:8px; right:8px;">
+            Sale
+          </div>
+          <div class="card-body d-flex justify-content-around">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-center"><b>Special Item</b> </h5>
+                <div class="d-flex justify-content-center mb-2 mt-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(255,187,0)" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(255,187,0)" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(255,187,0)" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(255,187,0)" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(255,187,0)" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                </div>
+                <p class="card-text text-center">$40.00 - $80.00</p>
+              </div>
+             
+              <a href="#" class="btn btn-white btn-outline-dark justify-content-center">Add cart</a>
+            </div>   
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center mb-5" style="height: 400px">
+          <img src="https://dummyimage.com/450x300/b6c4cc/fff" class="card-img-top" alt="alter">
+          <div class="card-body d-flex justify-content-around">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-center"><b>Fancy Product</b> </h5>
+                <p class="card-text text-center">$40.00 - $80.00 </p>
+              </div>
+              <a href="#" class="btn btn-white btn-outline-dark justify-content-center">View option</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card text-center mb-5" style="height: 400px">
+          <img src="https://dummyimage.com/450x300/b6c4cc/fff" class="card-img-top" alt="alter">
+          <div class="card-body d-flex justify-content-around">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-center"><b>Fancy Product</b> </h5>
+                <p class="card-text text-center">$40.00 - $80.00 </p>
+              </div>
+              <a href="#" class="btn btn-white btn-outline-dark justify-content-center">View option</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center mb-5" style="height: 400px">
+          <img src="https://dummyimage.com/450x300/b6c4cc/fff" class="card-img-top" alt="alter">
+          <div class="card-body d-flex justify-content-around">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-center"><b>Fancy Product</b> </h5>
+                <p class="card-text text-center">$40.00 - $80.00 </p>
+              </div>
+              <a href="#" class="btn btn-white btn-outline-dark justify-content-center">View option</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="card text-center mb-5" style="height: 400px">
+          <img src="https://dummyimage.com/450x300/b6c4cc/fff" class="card-img-top" alt="alter">
+          <div class="card-body d-flex justify-content-around">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-center"><b>Fancy Product</b> </h5>
+                <p class="card-text text-center">$40.00 - $80.00 </p>
+              </div>
+              <a href="#" class="btn btn-white btn-outline-dark justify-content-center">View option</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card text-center mb-5" style="height: 400px">
+          <img src="https://dummyimage.com/450x300/b6c4cc/fff" class="card-img-top" alt="alter">
+          <div class="card-body d-flex justify-content-around">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-center"><b>Fancy Product</b> </h5>
+                <p class="card-text text-center">$40.00 - $80.00 </p>
+              </div>
+              <a href="#" class="btn btn-white btn-outline-dark justify-content-center">View option</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center mb-5" style="height: 400px">
+          <img src="https://dummyimage.com/450x300/b6c4cc/fff" class="card-img-top" alt="alter">
+          <div class="card-body d-flex justify-content-around">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-center"><b>Fancy Product</b> </h5>
+                <p class="card-text text-center">$40.00 - $80.00 </p>
+              </div>
+              <a href="#" class="btn btn-white btn-outline-dark justify-content-center">View option</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+
+
+
+    </div>
+  </div>
+  <footer class="bg-dark py-5">
+    <p class="text-center text-white mb-0"> Copyright © Your Website 2022 </p>
+
+
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

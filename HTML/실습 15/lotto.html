@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .ball{
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      background-color: yellow;
+      line-height: 10rem;
+      text-align: center;
+      margin: 1rem;
+      font-size : xx-large;
+      font-weight: bold;
+
+    }
+    .ball_list{
+      display: inline-block;
+      width: 16%;
+    }
+  </style>
+</head>
+<body>
+  <h1> 로또 추천 번호 생성기 </h1>
+  <button id="btn"> 번호 생성</button>
+  <div id="result"> </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script>
+    const button = document.querySelector('#btn')
+    button.addEventListener('click',function(){
+
+      let i = 0
+      while (i<6){
+        const ballCon = document.createElement('div')
+        ballCon.classList.add('ball_list')
+
+        const numbers = _.sampleSize(_.range(1, 45), 6)
+        console.log(numbers)
+
+        const ball = document.createElement('div')
+        ball.classList.add('ball')
+        ball.innerText = numbers[0] 
+        ballCon.appendChild(ball)
+        if ( 1 <= numbers[0] && numbers[0] <= 10 ) {
+          ball.style.backgroundColor = 'yellow'
+        } else if ( 11 <= numbers[0] && numbers[0] <= 20 ) {
+          ball.style.backgroundColor = 'blue'
+        } else if ( 21 <= numbers[0] && numbers[0] <= 30) {
+          ball.style.backgroundColor = 'red'
+        } else if ( 31 <= numbers[0] && numbers[0] <= 40) {
+          ball.style.backgroundColor = 'gray'
+        } else {
+          ball.style.backgroundColor = 'green'
+        }
+
+      const result = document.querySelector('#result')
+      result.appendChild(ballCon)
+
+        i+=1
+      }
+
+
+
+    })
+
+
+
+  </script>
+
+
+
+</body>
+</html>
+
+
+
