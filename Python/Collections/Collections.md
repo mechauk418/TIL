@@ -39,3 +39,43 @@ print(A['A']) # 3
 
 
 `counter`으로 반환된 객체는 딕셔너리처럼 사용 가능하다.
+
+
+
+## 2. defaultdict
+
+
+
+`defaultdict` 는 딕셔너리를 만드는 서브클래스이다.
+
+
+
+딕셔너리의 기본값 타입을 미리 지정할 수 있다. (int, list, set 등등)
+
+
+
+기본값을 list로 지정한 예시
+
+
+
+```python
+from collections import defaultdict
+
+listdict = defaultdict(list)
+listdict['first']
+listdict['second'] = 'sec'
+listdict['third'].append('third')
+
+print(listdict)
+
+defaultdict(<class 'list'>, {'first': [], 'second': 'sec', 'third': ['third']})
+
+```
+
+
+
+`defaultdict` 가 유용한 이유는 예를 들어서 리스트 내부의 알파벳의 갯수를 센다고 할때 딕셔너리로 A: 갯수, B:갯수 처럼 표현한다고 하자.
+
+
+
+그런데 맨 처음 딕셔너리에 A나 B가 없으므로 키 값의 존재 유무를 판단하고 밸류의 값을 변경해주어야 하는데 `defaultdict` 를 int로 지정하면 자동으로 0으로 초기화해주기 때문에 편하다.
