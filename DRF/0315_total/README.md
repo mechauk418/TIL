@@ -101,6 +101,7 @@ Frontend : Vue.js
 로그인화면
 
 - http only 쿠키로 refresh token을 받아온다
+- access token 은 localstorage에 저장된다.
 
 
 
