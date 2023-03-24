@@ -89,6 +89,7 @@ const loginStore = {
     },
 
     logouttest_act ({ commit }) { // 로그아웃 actions
+      axios.post
       commit('logoutTest')
       window.location.href="http://localhost:8080/"
     },

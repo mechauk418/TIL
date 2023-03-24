@@ -8,6 +8,7 @@
       <p> 추천수 : {{ article_like }}</p>
       <div class="div_btn">
         <button @click="like" class="btn"> 좋아요 </button>
+        <button @click="delete_article" class="btn" v-show="article_user == login_user"> 삭제 </button>
         <router-link to="/articles"> <button class="bnt"> 목록 </button></router-link>
       </div>
     </div>
@@ -19,7 +20,7 @@
 import testaxios from '../../src/axios'
 import axios from 'axios'
 // @ is an alias to /src
-
+import loginStore from '../store/index'
 export default {
   data() {
     return {
@@ -28,15 +29,18 @@ export default {
       article_content:null,
       article_user:null,
       article_like:null,
+      login_user : null,
     }
   },
   mounted() {
+    if (loginStore.state.loginStore.isLogin) {
+      this.login_user = loginStore.state.loginStore.userInfo.email
+    }
     axios({
       method: "GET",
       url: 'http://localhost:8000/articles/' + this.$route.params.pk + '/'
     })
     .then(res =>{
-      console.log(res.data)
       this.article = res.data
       this.article_title = res.data.title
       this.article_content = res.data.content
@@ -47,9 +51,7 @@ export default {
   },
   methods: {
     like() {
-      testaxios.post('http://localhost:8000/articles/' + this.$route.params.pk + '/like/', {} ,{headers:
-          {Authorization : 'Bearer ' + localStorage.getItem('access_token')}
-        })
+      testaxios.post('http://localhost:8000/articles/' + this.$route.params.pk + '/like/')
       .then(
         axios({
           method: "GET",
@@ -59,6 +61,12 @@ export default {
           this.article_like = res.data.like_article.length
         })
       )
+    },
+    delete_article() {
+      testaxios.delete('http://localhost:8000/articles/' + this.$route.params.pk + '/')
+      .then(res => {
+        this.$router.push('../articles')
+      })
     }
 
   },

@@ -16,7 +16,7 @@
           <td><p> {{ article.pk }}  </p> </td>
           <td><router-link :to="'/detail/' + article.pk">{{ article.title }} </router-link></td>
           <td><p> {{ article.user }}  </p> </td>
-          <td><p> {{ article.created_at }}  </p> </td>
+          <td><p> {{ article.created_at.slice(5,10) }}  </p> </td>
           <td><p> 0  </p> </td>
           <td><p> {{article.like_article.length}}  </p> </td>
         </tr>
@@ -39,6 +39,9 @@ export default {
       page_next:null,
       page_prev:null,
       islogin:'',
+      year:null,
+      month:null,
+      date:null,
     }
   },
   mounted() {
@@ -47,6 +50,10 @@ export default {
       this.articles = response.data.results
       this.page_next= response.data.next
       this.page_prev = response.data.previous
+      const today = new Date()
+      this.year = today.getFullYear();
+      this.month = today.getMonth();
+      this.date = today.getDate();
     })
     .catch(error =>{
       console.log(error)
