@@ -89,7 +89,11 @@ const loginStore = {
     },
 
     logouttest_act ({ commit }) { // 로그아웃 actions
-      axios.post
+      axios({
+        method:'POST',
+        url:'http://localhost:8000/accounts/logout/',
+        withCredentials:true
+      })
       commit('logoutTest')
       window.location.href="http://localhost:8080/"
     },

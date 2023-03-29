@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "allauth.account",
     'allauth.socialaccount',
     'rest_framework_simplejwt',
+
 ]
 
 MIDDLEWARE = [
@@ -94,8 +95,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:9000",
     "http://127.0.0.1:8080",
+    "http://localhost:8000",
 
 ]
+
+
+
+CSRF_COOKIE_SAMESITE='Lax'
+CSRF_COOKIE_HTTPONLY =True
 
 
 
@@ -203,9 +210,11 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 
 REST_AUTH = {
     'USE_JWT' : True,
+    'JWT_AUTH_COOKIE' : 'access',
     'JWT_AUTH_HTTPONLY': True,
     'JWT_AUTH_REFRESH_COOKIE' : "refresh_token",
-    'JWT_AUTH_COOKIE_USE_CSRF' : True,
+    'JWT_AUTH_SAMESITE': 'Lax',
+    'JWT_AUTH_COOKIE_USE_CSRF' : False,
     'SESSION_LOGIN' : False
 }
 

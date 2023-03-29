@@ -7,6 +7,7 @@ class Article(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True, null=False, blank=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    hits = models.IntegerField(default = 0)
     def __str__(self):
         return self.title
 

@@ -50,5 +50,6 @@ class ArticleSerializer(serializers.ModelSerializer):
             "comments",
             "like_article",
             'created_at',
+            'hits',
         ]
 

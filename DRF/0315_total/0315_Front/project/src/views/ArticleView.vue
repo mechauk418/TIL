@@ -17,7 +17,7 @@
           <td><router-link :to="'/detail/' + article.pk">{{ article.title }} </router-link></td>
           <td><p> {{ article.user }}  </p> </td>
           <td><p> {{ article.created_at.slice(5,10) }}  </p> </td>
-          <td><p> 0  </p> </td>
+          <td><p> {{ article.hits }}  </p> </td>
           <td><p> {{article.like_article.length}}  </p> </td>
         </tr>
       </table>

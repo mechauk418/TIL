@@ -1,15 +1,16 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Article, Comment, Like
-from .serializers import ArticleSerializer, CommentSerializer, LikeSerializer 
-from rest_framework import viewsets, status, generics, mixins
-from rest_framework.response import Response
-from .permissions import IsOwnerOrReadOnly
-from rest_framework.pagination import PageNumberPagination
-import datetime
-from django.utils import timezone
-# Create your views here.
-class Article_pagination(PageNumberPagination):
-    page_size = 5
+# [DRF] 게시판 조회수 쿠키를 사용한 중복 방지
+
+
+
+조회수는 간단하게 구현하려고 하면 게시글 상세보기 요청할때마다 +1 하는 방식으로 간단하게 구현 가능하지만, 이런 방식은 한명이 조회수를 여러번 올리는 행위가 가능하다.
+
+그렇기 때문에 쿠키나 IP 등을 활용하여 중복 조회 방지를 통해 좀 더 유사한 조회수를 구현할 수 있다.
+
+여기서는 쿠키를 활용했다. 
+
+
+```python
+ # articles/views.py
 
 class Article_ViewSet(viewsets.ModelViewSet):
     queryset = Article.objects.all().order_by('-pk')
@@ -65,32 +66,20 @@ class Article_ViewSet(viewsets.ModelViewSet):
 
         return response
 
+```
 
-class Comment_ViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
+Article의 viewset 에서 retrieve를 오버라이딩 해준다.
 
-    def perform_create(self, serializer):
 
-        serializer.save(
-            user=self.request.user,
-            article=Article.objects.get(pk=self.kwargs.get("article_pk")),
-        )
+![](https://velog.velcdn.com/images/mechauk418/post/69c8558e-c82b-4640-8d7a-dec2df909476/image.jpg)
 
-class LikeCreate(generics.ListCreateAPIView, mixins.DestroyModelMixin):
-    serializer_class = LikeSerializer
 
-    def get_queryset(self):
-        article = Article.objects.get(pk=self.kwargs.get("article_pk"))
-        return Like.objects.filter(article=article)
+hit라는 쿠키에 내가 조회한 게시글의 pk가 담기는 것을 확인할 수 있다.
 
-    def perform_create(self, serializer):
-        article = Article.objects.get(pk=self.kwargs.get("article_pk"))
-        like = Like.objects.filter(user=self.request.user, article = article)
-        if like.exists():
-            like.delete()
-            return Response(status=status.HTTP_204_NO_CONTENT)
-        serializer.save(
-            user=self.request.user,
-            article=Article.objects.get(pk=self.kwargs.get("article_pk")),
-        )
+
+참고 : 
+[Django-mysite만들기9 게시판 조회수 중복 증가 쿠키 처리
+](https://jungeunlee95.github.io/django/2019/06/25/mysite%EB%A7%8C%EB%93%A4%EA%B8%B0-9-%EA%B2%8C%EC%8B%9C%ED%8C%90-%EC%A1%B0%ED%9A%8C%EC%88%98-%EC%A4%91%EB%B3%B5-%EC%A6%9D%EA%B0%80-%EC%BF%A0%ED%82%A4-%EC%B2%98%EB%A6%AC/)
+
+[DRF 게시글 생성 및 조회수 중복 방지(쿠키 설정)
+](https://moondol-ai.tistory.com/216)
