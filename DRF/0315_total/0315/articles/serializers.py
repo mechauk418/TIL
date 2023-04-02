@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article, Comment, Like
+from .models import Article, Comment, Like, PostImage
 
 class CommentSerializer(serializers.ModelSerializer):
 
@@ -53,3 +53,47 @@ class ArticleSerializer(serializers.ModelSerializer):
             'hits',
         ]
 
+    
+class PostImageSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(use_url=True)
+
+    class Meta:
+        model = PostImage
+        fields = [
+            'image',
+            ]
+
+
+class PostSerializer(serializers.ModelSerializer):
+    images = serializers.SerializerMethodField()
+    user = serializers.ReadOnlyField(source="user.email")
+    userpk = serializers.ReadOnlyField(source="user.pk")
+    comments = CommentSerializer(many=True, read_only=True)
+    like_article = LikeSerializer(many=True, read_only=True)
+    
+	#게시글에 등록된 이미지들 가지고 오기
+    def get_images(self, obj):
+        image = obj.image.all() 
+        return PostImageSerializer(instance=image, many=True, context=self.context).data
+
+    class Meta:
+        model = Article
+        fields = [
+            'pk',
+            "user",
+            "userpk",
+            "title",
+            "content",
+            "comments",
+            "like_article",
+            'created_at',
+            'hits',
+            'images',
+        ]
+
+    def create(self, validated_data):
+        instance = Article.objects.create(**validated_data)
+        image_set = self.context['request'].FILES
+        for image_data in image_set.getlist('image'):
+            PostImage.objects.create(article=instance, image=image_data)
+        return instance

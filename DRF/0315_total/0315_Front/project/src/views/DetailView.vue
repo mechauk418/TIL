@@ -5,6 +5,9 @@
       <div class="title"><p>{{article_title  }}</p></div>
       <div class="writer"><p> 작성자 :  {{ article_user }}</p> </div>
       <div class="content"> <p> 내용 : {{ article_content }}</p></div>
+      <div v-for="image in article_image" :key="image">
+        <img :src="image.image">
+      </div>
       <p> 추천수 : {{ article_like }}</p>
       <div class="div_btn">
         <button @click="like" class="btn"> 좋아요 </button>
@@ -30,6 +33,7 @@ export default {
       article_user:null,
       article_like:null,
       login_user : null,
+      article_image : [],
     }
   },
   mounted() {
@@ -38,7 +42,7 @@ export default {
     }
     axios({
       method: "GET",
-      url: 'http://localhost:8000/articles/' + this.$route.params.pk + '/',
+      url: 'http://localhost:8000/articles/kadmi/' + this.$route.params.pk + '/',
       withCredentials:true
     })
     .then(res =>{
@@ -47,6 +51,7 @@ export default {
       this.article_content = res.data.content
       this.article_user = res.data.user
       this.article_like = res.data.like_article.length
+      this.article_image = res.data.images
     })
 
   },

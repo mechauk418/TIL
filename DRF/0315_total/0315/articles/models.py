@@ -8,6 +8,7 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=False, blank=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     hits = models.IntegerField(default = 0)
+
     def __str__(self):
         return self.title
 
@@ -34,3 +35,8 @@ class Like(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="user_like"
     )
+
+
+class PostImage(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='image')
+    image = models.ImageField(upload_to="image", null=True, blank=True)

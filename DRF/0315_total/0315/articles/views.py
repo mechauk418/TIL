@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Article, Comment, Like
-from .serializers import ArticleSerializer, CommentSerializer, LikeSerializer 
+from .serializers import ArticleSerializer, CommentSerializer, LikeSerializer, PostSerializer
 from rest_framework import viewsets, status, generics, mixins
 from rest_framework.response import Response
 from .permissions import IsOwnerOrReadOnly
@@ -93,4 +93,15 @@ class LikeCreate(generics.ListCreateAPIView, mixins.DestroyModelMixin):
         serializer.save(
             user=self.request.user,
             article=Article.objects.get(pk=self.kwargs.get("article_pk")),
+        )
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Article.objects.all()
+    serializer_class = PostSerializer
+
+
+    def perform_create(self, serializer):
+
+        serializer.save(
+            user=self.request.user,
         )
