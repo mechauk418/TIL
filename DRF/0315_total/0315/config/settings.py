@@ -101,6 +101,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8080']
 
 CSRF_COOKIE_SAMESITE='Lax'
 CSRF_COOKIE_HTTPONLY =True
@@ -200,7 +201,13 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         "dj_rest_auth.jwt_auth.JWTCookieAuthentication",
         "rest_framework.authentication.SessionAuthentication",
-    )
+    ),
+    "DEFAULT_PARSER_CLASSES": (
+        "rest_framework.parsers.JSONParser",
+        "rest_framework.parsers.FormParser",
+        "rest_framework.parsers.MultiPartParser",
+        "rest_framework.parsers.FileUploadParser",
+    ),
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {

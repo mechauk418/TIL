@@ -9,6 +9,9 @@
       <input type="text" id="content" v-model="content" class="input-text">
     </div>
     <div>
+      <input multiple @change="OnArticleImage()" ref="ArticleImage" type="file" />
+    </div>
+    <div>
       <button @click="create"> 글 쓰기 </button>
     </div>
   </div>
@@ -25,6 +28,8 @@ import loginStore from '../store/index'
         title: '',
         content: '',
         islogin:'',
+        images:'',
+        images2:'',
       }
     },
     mounted() {
@@ -38,18 +43,37 @@ import loginStore from '../store/index'
     },
     methods:{
       create () {
-        const createdata = {}
-        createdata.title = this.title
-        createdata.content = this.content
-        testaxios.post('http://localhost:8000/articles/', createdata, {withCredentials : true}
-        )
+        const createdata = new FormData()
+        // createdata.title = this.title
+        // createdata.content = this.content
+        // createdata.images = this.images
+        createdata.append('title',this.title)
+        createdata.append('content',this.content)
+        for (const i of this.images) {
+          createdata.append('image',i)
+          console.log(i)
+        }
+        console.log(createdata)
+        testaxios({
+          method: 'POST',
+          url: 'http://localhost:8000/articles/', 
+          data: createdata,
+          withCredentials : true,
+          headers:{
+            'Content-Type': 'multipart/form-data'
+          }
+          
+        })
         .then(response => {
           const article_pk = response.data.pk
-          window.location.href="http://localhost:8080/detail/" + article_pk +'/'
+          // window.location.href="http://localhost:8080/detail/" + article_pk +'/'
         })
         .catch(error =>{
           console.log(error)
         })
+      },
+      OnArticleImage() {
+        this.images = this.$refs.ArticleImage.files
       }
     }
   }

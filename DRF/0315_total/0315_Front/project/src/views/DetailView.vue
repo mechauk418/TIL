@@ -42,7 +42,7 @@ export default {
     }
     axios({
       method: "GET",
-      url: 'http://localhost:8000/articles/kadmi/' + this.$route.params.pk + '/',
+      url: 'http://localhost:8000/articles/' + this.$route.params.pk + '/',
       withCredentials:true
     })
     .then(res =>{

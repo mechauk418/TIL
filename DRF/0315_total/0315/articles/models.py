@@ -40,3 +40,13 @@ class Like(models.Model):
 class PostImage(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='image')
     image = models.ImageField(upload_to="image", null=True, blank=True)
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=80)
+
+class Category(models.Model):
+    name = models.CharField(max_length=80)
+
+    
+    

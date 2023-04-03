@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article, Comment, Like, PostImage
+from .models import Article, Comment, Like, PostImage, Category, Tag
 
 class CommentSerializer(serializers.ModelSerializer):
 
@@ -97,3 +97,19 @@ class PostSerializer(serializers.ModelSerializer):
         for image_data in image_set.getlist('image'):
             PostImage.objects.create(article=instance, image=image_data)
         return instance
+    
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['name']
+
+
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ['name']
+
+class CateTagSerializer(serializers.Serializer):
+    cateList = CategorySerializer(many=True)
+    tagList = TagSerializer(many=True)

@@ -1,19 +1,20 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Article, Comment, Like
-from .serializers import ArticleSerializer, CommentSerializer, LikeSerializer, PostSerializer
+from .models import Article, Comment, Like, Category, Tag
+from .serializers import ArticleSerializer, CommentSerializer, LikeSerializer, PostSerializer, CateTagSerializer
 from rest_framework import viewsets, status, generics, mixins
 from rest_framework.response import Response
 from .permissions import IsOwnerOrReadOnly
 from rest_framework.pagination import PageNumberPagination
 import datetime
 from django.utils import timezone
+from rest_framework.views import APIView
 # Create your views here.
 class Article_pagination(PageNumberPagination):
     page_size = 5
 
 class Article_ViewSet(viewsets.ModelViewSet):
     queryset = Article.objects.all().order_by('-pk')
-    serializer_class = ArticleSerializer
+    serializer_class = PostSerializer
     permission_classes = [IsOwnerOrReadOnly]
     pagination_class = Article_pagination
 
@@ -105,3 +106,19 @@ class PostViewSet(viewsets.ModelViewSet):
         serializer.save(
             user=self.request.user,
         )
+
+
+
+class CateTagAPIView(APIView):
+    def get(self,request,*args,**kwargs):
+        cateList = Category.objects.all()
+        tagList = Tag.objects.all()
+
+        data = {
+            'cateList': cateList,
+            'tagList' : tagList,
+        }
+
+        serializer = CateTagSerializer(instance=data)
+
+        return Response(serializer.data)
