@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article, Comment, Like, PostImage, Category, Tag
+from .models import Article, Comment, Like, PostImage
 
 class CommentSerializer(serializers.ModelSerializer):
 
@@ -55,12 +55,12 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     
 class PostImageSerializer(serializers.ModelSerializer):
-    image = serializers.ImageField(use_url=True)
 
     class Meta:
         model = PostImage
         fields = [
             'image',
+            'image_original',
             ]
 
 
@@ -73,7 +73,7 @@ class PostSerializer(serializers.ModelSerializer):
     
 	#게시글에 등록된 이미지들 가지고 오기
     def get_images(self, obj):
-        image = obj.image.all() 
+        image = obj.image.all()
         return PostImageSerializer(instance=image, many=True, context=self.context).data
 
     class Meta:
@@ -95,21 +95,10 @@ class PostSerializer(serializers.ModelSerializer):
         instance = Article.objects.create(**validated_data)
         image_set = self.context['request'].FILES
         for image_data in image_set.getlist('image'):
-            PostImage.objects.create(article=instance, image=image_data)
+            ext = str(image_data).split('.')[-1]
+            ext = ext.lower()
+            if ext in ['jpg', 'jpeg','png',]:
+                PostImage.objects.create(article=instance, image=image_data, image_original=image_data)
+            elif ext in ['gif','webp']:
+                PostImage.objects.create(article=instance, image_original=image_data)
         return instance
-    
-
-class CategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ['name']
-
-
-class TagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = ['name']
-
-class CateTagSerializer(serializers.Serializer):
-    cateList = CategorySerializer(many=True)
-    tagList = TagSerializer(many=True)

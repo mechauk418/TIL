@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import Article_ViewSet, Comment_ViewSet, LikeCreate, PostViewSet, CateTagAPIView
+from .views import Article_ViewSet, Comment_ViewSet, LikeCreate, PostViewSet
 
 app_name = "articles"
 
@@ -28,6 +28,4 @@ urlpatterns = [
     # ),
     # path("images/<int:pk>/", PostViewSet.as_view({'get':'retrieve', "put": "update"})),
     path("",include(router.urls)),
-    path("catetag/", CateTagAPIView.as_view()),
-
 ]

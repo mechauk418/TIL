@@ -6,7 +6,8 @@
       <div class="writer"><p> 작성자 :  {{ article_user }}</p> </div>
       <div class="content"> <p> 내용 : {{ article_content }}</p></div>
       <div v-for="image in article_image" :key="image">
-        <img :src="image.image">
+        <img :src="image.image_original" v-if="image.image == null">
+        <img :src="image.image" v-else>
       </div>
       <p> 추천수 : {{ article_like }}</p>
       <div class="div_btn">
