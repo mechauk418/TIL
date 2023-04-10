@@ -1,11 +1,9 @@
 from django.urls import path, include
-from .views import CookieTokenRefreshView, CookieTokenObtainPairView # Import the above views
-
-
-app_name='accounts'
-
+from .views import kakao_callback, KakaoLogin # Import the above views
 
 urlpatterns = [
-    path('auth/token/', CookieTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('auth/token/refresh/', CookieTokenRefreshView.as_view(), name='token_refresh'),
+    path("kakao/callback/", kakao_callback, name="kakao_callback"),
+    path(
+        "kakao/login/finish/", KakaoLogin.as_view(), name="kakao_login_todjango"
+    ),
 ]

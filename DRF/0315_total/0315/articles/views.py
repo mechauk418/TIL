@@ -72,10 +72,9 @@ class Comment_ViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
 
     def perform_create(self, serializer):
-
         serializer.save(
             user=self.request.user,
-            article=Article.objects.get(pk=self.kwargs.get("article_pk")),
+            article=Article.objects.get(pk=self.kwargs.get("pk")),
         )
 
 class LikeCreate(generics.ListCreateAPIView, mixins.DestroyModelMixin):
@@ -96,13 +95,3 @@ class LikeCreate(generics.ListCreateAPIView, mixins.DestroyModelMixin):
             article=Article.objects.get(pk=self.kwargs.get("article_pk")),
         )
 
-class PostViewSet(viewsets.ModelViewSet):
-    queryset = Article.objects.all()
-    serializer_class = PostSerializer
-
-
-    def perform_create(self, serializer):
-
-        serializer.save(
-            user=self.request.user,
-        )

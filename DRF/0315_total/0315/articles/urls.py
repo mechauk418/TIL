@@ -1,11 +1,8 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import Article_ViewSet, Comment_ViewSet, LikeCreate, PostViewSet
+from .views import Article_ViewSet, Comment_ViewSet, LikeCreate
 
 app_name = "articles"
-
-router = DefaultRouter()
-router.register('kadmi', PostViewSet)
 
 urlpatterns = [
     path("", Article_ViewSet.as_view({'get':'list', 'post':'create'})),
@@ -24,8 +21,4 @@ urlpatterns = [
         "<int:pk>/like/",
         LikeCreate.as_view(),
     ),
-    # path('images/', PostViewSet.as_view({"post": "create", "get": "list", "delete": "destroy"}),
-    # ),
-    # path("images/<int:pk>/", PostViewSet.as_view({'get':'retrieve', "put": "update"})),
-    path("",include(router.urls)),
 ]

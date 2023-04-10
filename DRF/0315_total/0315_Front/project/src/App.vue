@@ -3,9 +3,9 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/articles">Article</router-link> |
-    <router-link to="/login" v-if="logincheck==false">login |</router-link>
-    <a @click="logoutplz()" v-if="logincheck">로그아웃  | </a>
-    <router-link to="/signup" v-if="logincheck==false"> SignUp  |</router-link>
+    <router-link to="/login" v-show="logincheck==false">login |</router-link>
+    <a @click="logoutplz()" v-show="logincheck">로그아웃  | </a>
+    <router-link to="/signup" v-show="logincheck==false"> SignUp  |</router-link>
     <a @click="refresh()"> Refresh  |</a>  </nav>
   <router-view/>
 </template>
@@ -21,24 +21,29 @@ export default {
   },
   mounted() {
     this.logincheck = loginStore.state.loginStore.isLogin
+    // window.addEventListener('load', this.leave)
   },
   methods:{
-    logoutplz () {
+    leave(){
+      localStorage.removeItem('access_token')
+      localStorage.removeItem('vuex')
+    },
+    logoutplz() {
       this.$store.dispatch('logouttest_act')
     },
-    refresh () {
+    refresh() {
       axios({
         method : 'POST',
-        url : 'http://localhost:8000/accounts/auth/token/refresh/',
+        url : 'http://localhost:8000/accounts/token/refresh/',
         withCredentials : true
       })
       .then(res=>{
         console.log(res)
       })
-
     }
   }
 }
+
 </script>
 
 <style>

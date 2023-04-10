@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     'allauth.socialaccount',
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.kakao",
     'rest_framework_simplejwt',
 
 ]
@@ -236,7 +238,7 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 from datetime import timedelta
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=3),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,
