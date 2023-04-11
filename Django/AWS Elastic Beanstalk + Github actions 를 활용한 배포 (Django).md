@@ -26,7 +26,7 @@ https://aws.amazon.com/ko < 요기로 접속하자.
 
 IAM으로 들어가면 사용자를 추가해준다. 
 
-![](./images/IAM 계정생성1.jpg)
+![](./images/IAM계정생성1.jpg)
 
 1. 사용자 이름 설정
 2. 액세스 키 선택 후 다음
