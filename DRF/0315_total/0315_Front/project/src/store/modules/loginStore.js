@@ -69,18 +69,12 @@ const loginStore = {
       })
     },
     googlelogin(dispatch, code){
-      axios.get(`https://www.unbback.cf/accounts/google/callback/?code=${code}`)
+      axios.get(`http://localhost:8000/accounts/google/callback/?code=${code}`, {withCredentials:true})
       .then((response) => {
         const token = response.data.access_token
         localStorage.setItem('access_token', token) // 토큰을 저장함
-        const refretoken = response.data.refresh_token
-        localStorage.setItem('refresh_token', refretoken) // 토큰을 저장함
         axios.defaults.headers.common.Authorization = `Bearer ${token}`
-        const userInfo = {
-          pk: response.data.user.pk,
-          email: response.data.user.email,
-        } // 유저 정보를 받아옴
-        this.commit('loginSuccess', userInfo) // mutations 호출
+        this.dispatch('getMemberInfo') // 유저 정보를 가져오는 actions 호출
       })
       .catch((err)=>{
 
@@ -112,7 +106,7 @@ const loginStore = {
             email: response.data.email,
           } // 유저 정보를 받아옴
           commit('loginSuccess', userInfo) // mutations 호출
-          // window.location.href="http://localhost:8080/"
+          window.location.href="http://localhost:8080/"
           // router.push('logincheck')
         })
         .catch((err) => {
