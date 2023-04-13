@@ -11,7 +11,7 @@ from django.http import JsonResponse
 from json.decoder import JSONDecodeError
 from rest_framework.response import Response
 from dj_rest_auth.registration.views import SocialLoginView
-import requests
+import requests, os
 from allauth.socialaccount.models import SocialAccount
 from rest_framework.permissions import AllowAny
 from allauth.account.adapter import get_adapter
@@ -30,7 +30,7 @@ KAKAO_CALLBACK_URI = "http://localhost:8080/login"  # 프론트 로그인 URI �
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def kakao_callback(request):
-    rest_api_key = '17927c83c8f77eef6c83ef6dd7ff221c'  # 카카오 앱키, 추후 시크릿 처리
+    rest_api_key = os.getenv('rest_api_key')  # 카카오 앱키, 추후 시크릿 처리
     code = request.GET.get("code")
     print(code)
     redirect_uri = KAKAO_CALLBACK_URI
@@ -137,8 +137,9 @@ GOOGLE_CALLBACK_URI = "http://localhost:8080/login"  # 프론트 로그인 URI �
 @api_view(["GET", "POST"])
 @permission_classes([AllowAny])
 def google_callback(request):
-    client_id = '319698127254-ci76jba5ro0oj9ugs7qhfq3a5sp6irrv.apps.googleusercontent.com'
-    client_secret = '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'
+    client_id = os.getenv("client_id")
+    client_secret = os.getenv("client_secret")
+
     code = request.GET.get("code")
     print(code)
     """
